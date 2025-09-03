@@ -1,0 +1,16 @@
+/* themes.css */
+:root {
+  --background-gradient: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  --text-color: #222;
+  --toggle-bg: #ddd;
+  --toggle-circle: #fff;
+  --emoji-bounce: 0;
+}
+
+[data-theme="dark"] {
+  --background-gradient: linear-gradient(135deg, #232526, #1c1c1c);
+  --text-color: #eee;
+  --toggle-bg: #444;
+  --toggle-circle: #222;
+  --emoji-bounce: 1;
+}

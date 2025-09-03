@@ -1,0 +1,103 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background-gradient);
+  color: var(--text-color);
+  transition: background 0.8s ease, color 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.8s ease;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  transition: color 0.8s ease;
+}
+
+/* Toggle Switch Container */
+.toggle-switch {
+  position: relative;
+  width: 70px;
+  height: 34px;
+  margin: 1rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide default checkbox */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--toggle-bg);
+  border-radius: 34px;
+  transition: background-color 0.4s;
+}
+
+/* The circle */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--toggle-circle);
+  border-radius: 50%;
+  transition: transform 0.4s, background-color 0.4s;
+}
+
+/* Checked state */
+.toggle-switch input:checked + .slider {
+  background-color: var(--toggle-bg);
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(36px);
+}
+
+/* Hover effect */
+.toggle-switch:hover .slider {
+  box-shadow: 0 0 8px var(--text-color);
+}
+
+/* Emoji bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.emoji {
+  font-size: 3rem;
+  margin-top: 1rem;
+  display: inline-block;
+  animation: bounce 2s infinite;
+  animation-play-state: paused;
+  transition: color 0.8s ease;
+  color: var(--text-color);
+}
+
+/* Bounce active when dark theme */
+[data-theme="dark"] .emoji {
+  animation-play-state: running;
+}
